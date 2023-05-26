@@ -43,10 +43,9 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        // this.price = (price > 10) ? price: throw Exception;
-        // if (price <= 0){
-        //     throw new ille
-        // }
+        if (price <= 0) {
+            throw new IllegalStateException(String.format("Цена указана некорректно!", price));
+        }
         this.price = price;
     }
 
