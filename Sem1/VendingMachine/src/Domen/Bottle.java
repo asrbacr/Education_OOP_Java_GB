@@ -29,6 +29,7 @@ public class Bottle extends Product {
         public String toString()
         {
             return "Product{" +
+            "productId='" + super.getProductId() + '\'' +
             "name='" + super.getProductName() + '\'' +
             "category='" + super.getProductCategory() + '\'' +
             ", cost=" + super.getPrice() +
