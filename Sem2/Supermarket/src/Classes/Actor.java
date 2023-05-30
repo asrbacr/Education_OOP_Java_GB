@@ -9,4 +9,7 @@ public abstract class Actor {
         this.name = name;
     }
     abstract public String getName();
+    public Actor getActor() {
+        return null;
+    }
 }
