@@ -2,7 +2,7 @@ package Classes;
 
 import Interfaces.iActorBehaviour;
 
-public class TaxService implements iActorBehaviour  {
+public class TaxService implements iActorBehaviour {
 
     private String name;
     private boolean isTakeOrder;
@@ -12,7 +12,7 @@ public class TaxService implements iActorBehaviour  {
         this.name = "Tax audit";
     }
 
-    public String getName() {        
+    public String getName() {
         return name;
     }
 
@@ -28,17 +28,16 @@ public class TaxService implements iActorBehaviour  {
 
     @Override
     public void setMakeOrder(boolean makeOrder) {
-       isMakeOrder = makeOrder;
+        isMakeOrder = makeOrder;
     }
 
     @Override
     public void setTakeOrder(boolean pickUpOrder) {
-       isTakeOrder = pickUpOrder;   
+        isTakeOrder = pickUpOrder;
     }
 
     @Override
     public Actor getActor() {
         return new OrdinaryClient(name);
     }
-    
 }
