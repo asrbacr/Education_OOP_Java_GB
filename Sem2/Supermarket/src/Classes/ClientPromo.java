@@ -1,59 +1,72 @@
 package Classes;
 
+import Interfaces.iActorBehaviour;
 import Interfaces.iReturnOrder;
 
-/**
- * Класс акционного клиента 
- */
-public class ClientPromo extends Actor implements iReturnOrder{
+public class ClientPromo extends Actor implements iReturnOrder {
+    private int idClientPromo;
 
-    private String promotionName;
-
-    public ClientPromo(String name) {
+    public ClientPromo(String name, int idClientPromo) {
         super(name);
-        //TODO Auto-generated constructor stub
+        this.idClientPromo = idClientPromo;
+    }
+
+    /** Метод возвращающий имя клиента */
+    @Override
+    public String getName() {
+        return super.name;
+    }
+
+    /** Метод возвращает результат созданого заказа */
+    @Override
+    public boolean isMakeOrder() {
+        return super.isMakeOrder;
+    }
+
+    /** Метод возвращает результат полученного заказа */
+    @Override
+    public boolean isTakeOrder() {
+        return super.isTakeOrder;
     }
 
     @Override
     public void setMakeOrder(boolean makeOrder) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setMakeOrder'");
+        super.isMakeOrder = makeOrder;
     }
 
     @Override
     public void setTakeOrder(boolean pickUpOrder) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setTakeOrder'");
+        super.isTakeOrder = pickUpOrder;
     }
 
+    /** Метод возврата товара */
     @Override
-    public boolean isMakeOrder() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isMakeOrder'");
+    public void purchasceReturn(Actor actor) {
+        System.out.println(actor.getName() + " клиент оформил возврат товара!");
+        goodsCheck();
+        productApproved(actor);
     }
 
+    /** Метод проверка товара */
     @Override
-    public boolean isTakeOrder() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isTakeOrder'");
+    public boolean goodsCheck() {
+        System.out.println("Товар отправлен на проверку");
+        return goodsCheck = true;
     }
 
+    /** Метод одобрения возврата */
     @Override
+    public void productApproved(Actor actor) {
+        if (goodsCheck == true) {
+            System.out.println("Товар принят к возврату. Деньги за товар отправлены клиенту: " + actor.getName());
+        }
+    }
+
     public Actor getActor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getActor'");
+        return this;
+      }
+
+    public void purchasceReturn(iActorBehaviour client3) {
     }
 
-    @Override
-    public String getName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getName'");
-    }
-
-    @Override
-    public void returnOrder() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'returnOrder'");
-    }
-    
 }

@@ -6,6 +6,7 @@ public abstract class Actor implements iActorBehaviour {
     protected String name;
     protected boolean isTakeOrder;
     protected boolean isMakeOrder;
+    protected boolean goodsCheck;
 
     public Actor(String name) {
         this.name = name;
