@@ -5,6 +5,7 @@ import java.util.List;
 import StudentDomen.Person;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
+import StudentDomen.StudentSteam;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -29,11 +30,32 @@ public class App {
         listStud.add(s5);
         listStud.add(s6);
         listStud.add(pers1);
-
+        
         StudentGroup group4335 = new StudentGroup(listStud, 4335);
+        List<Student> listStud2 = new ArrayList<Student>();
+        listStud2.add(new Student("Сергей", "Иванов", 22, 101));
+        listStud2.add(new Student("Андрей", "Сидоров", 22, 111));
+        listStud2.add(new Student("Иван", "Петров", 22, 121));
+        listStud2.add(new Student("Игорь", "Иванов", 23, 301));
+        listStud2.add(new Student("Даша", "Цветкова", 23, 171));
+        listStud2.add(new Student("Лена", "Незабудкина", 23, 104));
+        StudentGroup group4356 = new StudentGroup(listStud2, 4356);
+        
+        List<Student> listStud3 = new ArrayList<Student>();
+        listStud3.add(new Student("Сергей", "Иванов", 22, 101));
+        listStud3.add(new Student("Андрей", "Сидоров", 22, 111));
+        listStud3.add(new Student("Иван", "Петров", 22, 121));
+        listStud3.add(new Student("Игорь", "Иванов", 23, 301));
+        listStud3.add(new Student("Даша", "Цветкова", 23, 171));
+        listStud3.add(new Student("Лена", "Незабудкина", 23, 104));
+        StudentGroup group3567 = new StudentGroup(listStud3, 3567);
+
+        StudentSteam listGroup = new StudentSteam()
+        listGroup.add()
+
         //System.out.println(group4335.toString());
 
-        for(Student stud:group4335)
+        /* for(Student stud:group4335)
         {
             System.out.println(stud.toString());
         }
@@ -44,6 +66,9 @@ public class App {
         for(Student stud:group4335)
         {
             System.out.println(stud.toString());
-        }
+        } */
+        System.out.println("===============================");
+
+
     }
 }

@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroup implements Iterable<Student> {
+    public static int getIdGroup;
     List<Student> group;
     private int idGroup;
 
