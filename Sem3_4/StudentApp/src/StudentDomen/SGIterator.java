@@ -1,13 +1,15 @@
 package StudentDomen;
 
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 public class SGIterator implements Iterator<Student> {
-
     private int counter;
     private final List<Student> students;
+
+    public SGIterator(List<Student> students) {
+        this.students = students;
+    }
 
     @Override
     public boolean hasNext() {
@@ -16,10 +18,11 @@ public class SGIterator implements Iterator<Student> {
 
     @Override
     public Student next() {
-        if (!hasNext()){
+        if(!hasNext())
+        {
             return null;
         }
         return students.get(counter++);
     }
-   
+    
 }

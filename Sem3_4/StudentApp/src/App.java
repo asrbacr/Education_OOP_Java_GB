@@ -8,12 +8,11 @@ import StudentDomen.StudentGroup;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Person men = new Person();
-        men.Person("Василий", "Пупкин", 24);
-        men.toString();
+        Person man = new Person("Денис", "Криницын", 35);
+        //System.out.println(man.toString());
 
         Student pers1 = new Student("Денис", "Криницын", 35, 1);
-        System.out.println(pers1.toString());
+        //System.out.println(pers1.toString());
 
         Student s1 = new Student("Сергей", "Иванов", 22, 101);
         Student s2 = new Student("Андрей", "Сидоров", 22, 111);
@@ -32,8 +31,19 @@ public class App {
         listStud.add(pers1);
 
         StudentGroup group4335 = new StudentGroup(listStud, 4335);
-        System.out.println(group4335.toString());
+        //System.out.println(group4335.toString());
 
+        for(Student stud:group4335)
+        {
+            System.out.println(stud.toString());
+        }
+
+        System.out.println("===============================");
         Collections.sort(group4335.getGroup());
+
+        for(Student stud:group4335)
+        {
+            System.out.println(stud.toString());
+        }
     }
 }

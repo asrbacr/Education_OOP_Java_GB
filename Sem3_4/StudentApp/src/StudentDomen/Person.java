@@ -1,32 +1,53 @@
 package StudentDomen;
 
 public class Person {
-    private String personName;
-    private String secondName;
-    private int age;
-
+    protected String firstName;
+    protected String secondName;
+    protected int age;
 
     /**
-     * Конструктор класса 
-     * @param personName - имя
-     * @param secondName - фамилия
-     * @param age - возраст
-     */
-    public void Person(String personName, String secondName, int age){
-        this.personName=personName;
+   * Конструктор класса 
+   * @param firstName Имя
+   * @param secondName Фамилия
+   * @param age Возраст
+   */
+    public Person(String firstName, String secondName, int age) 
+    {
+        this.firstName=firstName;
         this.secondName=secondName;
         this.age=age;
     }
 
-    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     @Override
     public String toString() {
         return "Person{" +
-                "personName='" + personName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", age=" + age +
                 '}';
     }
-    
 }
