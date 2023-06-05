@@ -1,38 +1,55 @@
 package StudentDomen;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.GroupLayout.Group;
+
 public class StudentSteam implements Iterable<StudentGroup> {
 
-    List<StudentGroup> steamGroup;
+    private List<StudentGroup> streamGroup;
+    private int streamNumber;
 
     /**
      * Формирование списка групп
      */
-    public StudentSteam(List<StudentGroup> steamGroups, int idGroup) {
-        idGroup = StudentGroup.getIdGroup;
-        this.steamGroup = steamGroup;
+    public void StudentStream(int streamNumber) {
+        this.streamNumber = streamNumber;
+        this.streamGroup = new ArrayList<>();
     }
 
     /**
-     * Сформировать список групп
-     * @return - список групп
-     */
-    public List<StudentGroup> getSteamGroup() {
-        return steamGroup;
+     * Метод для добавлениие группы в список потока
+    */
+    public void addGroupStream (StudentGroup group) {
+        this.streamGroup.add(group);
     }
 
+    /**
+     * Метод возвращает номер потока.
+     * @return
+     */
+    public int getStreamNumber() {
+        return streamNumber;
+    }
+
+    /**
+     * Метод возвращает список групп.
+     * @return
+     */
+    public  List<StudentGroup> getGroups() {
+        return streamGroup;
+    }
 
 
     @Override
     public String toString() {
         return "StudentSteam{" +
-                "StudentGroup=" + steamGroup +
+                "StudentGroup=" + streamGroup +
                 ", idGroup=" + StudentGroup.getIdGroup +
                 '}';
     }
-
 
     @Override
     public Iterator<StudentGroup> iterator() {
@@ -41,7 +58,7 @@ public class StudentSteam implements Iterable<StudentGroup> {
 
             @Override
             public boolean hasNext() {
-                return counter < steamGroup.size();
+                return counter < streamGroup.size();
             }
 
             @Override
@@ -49,9 +66,10 @@ public class StudentSteam implements Iterable<StudentGroup> {
                 if (!hasNext()) {
                     return null;
                 }
-                return steamGroup.get(counter++);
+                return streamGroup.get(counter++);
             }
         }
     }
+
 
 }

@@ -50,8 +50,12 @@ public class App {
         listStud3.add(new Student("Лена", "Незабудкина", 23, 104));
         StudentGroup group3567 = new StudentGroup(listStud3, 3567);
 
-        StudentSteam listGroup = new StudentSteam()
-        listGroup.add()
+        StudentSteam listGroup = new StudentSteam();
+        listGroup.addGroupStream(group3567);
+        listGroup.addGroupStream(group4356);
+        listGroup.addGroupStream(group4335);
+        
+
 
         //System.out.println(group4335.toString());
 
