@@ -1,56 +1,49 @@
 package StudentDomen;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.swing.GroupLayout.Group;
-
+/*
+ * представляет поток студентов и содержит поле`streamNumber` - номер потока, 
+ * и список `groups` - список учебных групп,представленных объектами класса `StudentGroup`.
+ * 
+ */
 public class StudentSteam implements Iterable<StudentGroup> {
 
-    private List<StudentGroup> streamGroup;
     private int streamNumber;
+    private List<StudentGroup> groups;
 
-    /**
-     * Формирование списка групп
-     */
-    public void StudentStream(int streamNumber) {
+    public StudentSteam(int streamNumber) {
         this.streamNumber = streamNumber;
-        this.streamGroup = new ArrayList<>();
+        this.groups = new ArrayList<>();
     }
 
-    /**
-     * Метод для добавлениие группы в список потока
-    */
-    public void addGroupStream (StudentGroup group) {
-        this.streamGroup.add(group);
+    /*
+     * Метод `addGroup(StudentGroup group)` добавляет группу в список групп потока.
+     */
+    public void addGroup(StudentGroup group) {
+        this.groups.add(group);
     }
 
-    /**
-     * Метод возвращает номер потока.
-     * @return
+    /*
+     * Метод `getStreamNumber()` возвращает номер потока, а метод `getGroups()`
+     * возвращает список групп.
      */
     public int getStreamNumber() {
         return streamNumber;
     }
 
-    /**
-     * Метод возвращает список групп.
-     * @return
+    public List<StudentGroup> getGroups() {
+        return groups;
+    }
+
+    /*
+     * Интерфейс `Iterable` был реализован, поэтому в классе `StudentStream`
+     * былреализован метод `iterator()`,
+     * который возвращает итератор для списка групп.
      */
-    public  List<StudentGroup> getGroups() {
-        return streamGroup;
-    }
-
-
-    @Override
-    public String toString() {
-        return "StudentSteam{" +
-                "StudentGroup=" + streamGroup +
-                ", idGroup=" + StudentGroup.getIdGroup +
-                '}';
-    }
-
     @Override
     public Iterator<StudentGroup> iterator() {
         return new Iterator<StudentGroup>() {
@@ -58,7 +51,7 @@ public class StudentSteam implements Iterable<StudentGroup> {
 
             @Override
             public boolean hasNext() {
-                return counter < streamGroup.size();
+                return counter < groups.size();
             }
 
             @Override
@@ -66,10 +59,17 @@ public class StudentSteam implements Iterable<StudentGroup> {
                 if (!hasNext()) {
                     return null;
                 }
-                return streamGroup.get(counter++);
+                return groups.get(counter++);
             }
-        }
+        };
     }
 
+    @Override
+    public String toString() {
+        return "StudentSteam{" +
+                "StudentGroup=" + groups +
+                ", idGroup=" + StudentGroup.getIdGroup +
+                '}';
+    }
 
 }
