@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Controllers.EmploeeController;
+import StudentDomen.Emploee;
 import StudentDomen.Person;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
@@ -9,7 +11,7 @@ import StudentDomen.StudentSteam;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Person man = new Person("Денис", "Криницын", 35);
+        /* Person man = new Person("Денис", "Криницын", 35);
         //System.out.println(man.toString());
 
         Student pers1 = new Student("Денис", "Криницын", 35, 1);
@@ -78,8 +80,17 @@ public class App {
         for(Student stud:group4335)
         {
             System.out.println(stud.toString());
-        } */
-        System.out.println("===============================");
+        } 
+        System.out.println("==============================="); */
+
+        Emploee per1 = new Emploee("Борис", "Иванов", 40, "basic");
+        Student s1 = new Student("Сергей", "Иванов", 22, 101);
+
+        // EmploeeController empContr = new EmploeeController();
+        // empContr.paySalary(per1);
+        EmploeeController.paySalary(per1);
+        // empContr.paySalary(s1);
+        
 
 
     }
