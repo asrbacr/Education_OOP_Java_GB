@@ -3,11 +3,14 @@ import java.util.Collections;
 import java.util.List;
 
 import Controllers.EmploeeController;
+import Controllers.TeacherController;
+import Services.TeacherService;
 import StudentDomen.Emploee;
 import StudentDomen.Person;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
 import StudentDomen.StudentSteam;
+import StudentDomen.Teacher;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -23,7 +26,7 @@ public class App {
         Student s4 = new Student("Игорь", "Иванов", 23, 301);
         Student s5 = new Student("Даша", "Цветкова", 23, 171);
         Student s6 = new Student("Лена", "Незабудкина", 23, 104);
-
+        
         List<Student> listStud = new ArrayList<Student>();
         listStud.add(s1);
         listStud.add(s2);
@@ -83,13 +86,26 @@ public class App {
         } 
         System.out.println("==============================="); */
 
-        Emploee per1 = new Emploee("Борис", "Иванов", 40, "basic");
+        /* Emploee per1 = new Emploee("Борис", "Иванов", 40, "basic");
         Student s1 = new Student("Сергей", "Иванов", 22, 101);
 
         // EmploeeController empContr = new EmploeeController();
         // empContr.paySalary(per1);
         EmploeeController.paySalary(per1);
-        // empContr.paySalary(s1);
+        // empContr.paySalary(s1); */
+
+        Teacher t1 = new Teacher("Сергей", "Иванов", 22, 101);
+        Teacher t3 = new Teacher("Иван", "Петров", 22, 121);
+        Teacher t4 = new Teacher("Игорь", "Иванов", 23, 301);
+        Teacher t5 = new Teacher("Даша", "Цветкова", 23, 171);
+        Teacher t6 = new Teacher("Лена", "Незабудкина", 23, 104);
+
+        TeacherService techServ = new TeacherService();
+
+        techServ.getAll();
+        techServ.getSortedByFIOTeachersList();
+        
+
         
 
 
