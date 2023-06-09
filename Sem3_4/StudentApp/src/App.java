@@ -54,7 +54,7 @@ public class App {
         listStud3.add(new Student("Даша", "Цветкова", 23, 171));
         listStud3.add(new Student("Лена", "Незабудкина", 23, 104));
         StudentGroup group3567 = new StudentGroup(listStud3, 3567);
-
+        
         StudentSteam listGroup = new StudentSteam(0);
         // listGroup.addGroupStream(group3567);
         // listGroup.addGroupStream(group4356);
@@ -65,19 +65,35 @@ public class App {
         listGroup.addGroup(group4356);
         listGroup.addGroup(group4335);
 
-        listGroup.toString();
+        listGroup.toString(); */
+
+        // Семинар 4 Задание 3. начало
+
+        List<Teacher> listTeacher = new ArrayList<Teacher>();
+        listTeacher.add(new Teacher("Сергей", "Иванов", 22, 101));
+        listTeacher.add(new Teacher("Андрей", "Сидоров", 22, 111));
+        listTeacher.add(new Teacher("Иван", "Петров", 22, 121));
+        listTeacher.add(new Teacher("Игорь", "Иванов", 23, 301));
+        listTeacher.add(new Teacher("Даша", "Цветкова", 23, 171));
+        listTeacher.add(new Teacher("Лена", "Незабудкина", 23, 104));
+
+        for (Teacher teacher : listTeacher) {
+            teacher.toString();
+        }
+
+        // Семинар 4 Задание 3. конец
 
         
 
 
         //System.out.println(group4335.toString());
 
-        /* for(Student stud:group4335)
-        {
-            System.out.println(stud.toString());
-        }
+        // for(Student stud:group4335)
+        // {
+        //     System.out.println(stud.toString());
+        // }
 
-        System.out.println("===============================");
+        /* System.out.println("===============================");
         Collections.sort(group4335.getGroup());
 
         for(Student stud:group4335)
@@ -94,7 +110,7 @@ public class App {
         EmploeeController.paySalary(per1);
         // empContr.paySalary(s1); */
 
-        Teacher t1 = new Teacher("Сергей", "Иванов", 22, 101);
+        /* Teacher t1 = new Teacher("Сергей", "Иванов", 22, 101);
         Teacher t3 = new Teacher("Иван", "Петров", 22, 121);
         Teacher t4 = new Teacher("Игорь", "Иванов", 23, 301);
         Teacher t5 = new Teacher("Даша", "Цветкова", 23, 171);
@@ -103,7 +119,7 @@ public class App {
         TeacherService techServ = new TeacherService();
 
         techServ.getAll();
-        techServ.getSortedByFIOTeachersList();
+        techServ.getSortedByFIOTeachersList(); */
         
 
         
