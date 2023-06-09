@@ -9,6 +9,7 @@ import View.View;
 
 public class Controller {
     private iGetView view;
+    private iGetView viewEng;
     private iGetModel model;
     private List<Student> students;
 
@@ -31,32 +32,30 @@ public class Controller {
     }
 
     public void update() {
-        //MVP
+        // MVP
         getAllStudents();
-        if(testData())
-        {
+        if (testData()) {
             view.printAllStudents(students);
-        }
-        else{
+        } else {
             System.out.println("Список студентов пуст!");
         }
 
-        //MVC
-        //view.printAllStudents(model.getAllStudents());
+        // MVC
+        // view.printAllStudents(model.getAllStudents());
     }
 
-    public void run()
-    {
+    /**
+     * Русский язык
+     */
+    public void run() {
         Commands com = Commands.NONE;
         boolean getNewIteration = true;
-        while(getNewIteration)
-        {
-            String command = view.prompt("Введите команду:");
+        while (getNewIteration) {
+            String command = view.prompt("Введите команду: ");
             com = Commands.valueOf(command.toUpperCase());
-            switch(com)
-            {
+            switch (com) {
                 case EXIT:
-                    getNewIteration=false;
+                    getNewIteration = false;
                     System.out.println("Выход из программы!");
                     break;
                 case LIST:
@@ -64,8 +63,51 @@ public class Controller {
                     view.printAllStudents(students);
                     break;
             }
-
         }
     }
+    
+    /**
+     * English language
+     */
+    public void runEng() {
+        Commands com = Commands.NONE;
+        boolean getNewIteration = true;
+        while (getNewIteration) {
+            String command = view.prompt("Input command: ");
+            com = Commands.valueOf(command.toUpperCase());
+            switch (com) {
+                case EXIT:
+                    getNewIteration = false;
+                    System.out.println("Exiting the programme!");
+                    break;
+                case LIST:
+                    getAllStudents();
+                    view.printAllStudents(students);
+                    break;
+            }
+        }
+    }
+    
+    private void errorInputLanguage() {
+        System.out.println("Ошибка: возможно ошиблись при вводе, повторите запуск приложения");
+    }
 
+    /**
+     * Команда для запуска программы
+     */
+    public void startProgramm() {
+        LangProgramm lang = LangProgramm.NONE;
+        String command = view.prompt("Введите язык (RUS или ENG) / Input language (RUS or ENG): ");
+        lang = LangProgramm.valueOf(command.toUpperCase());
+        switch (lang) {
+            case RUS:
+                run();
+                break; 
+            case ENG:
+                runEng();
+                break;
+        }
+
+        
+    }
 }

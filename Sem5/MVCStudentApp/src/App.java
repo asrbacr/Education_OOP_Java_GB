@@ -34,8 +34,8 @@ public class App {
        iGetModel newFModel = fModel;
        iGetView view = new View();
 
-       Controller controller = new Controller(view, newFModel);
+       Controller controller = new Controller(view, model);
        //controller.update();
-       controller.run();
+       controller.startProgramm();
     }
 }
