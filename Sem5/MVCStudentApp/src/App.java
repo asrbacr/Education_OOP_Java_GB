@@ -4,6 +4,7 @@ import java.util.List;
 import Controller.Controller;
 import Controller.iGetModel;
 import Controller.iGetView;
+import Model.FileModel;
 import Model.Model;
 import Model.Student;
 import View.View;
@@ -26,10 +27,15 @@ public class App {
         students.add(s6);
 
 
-        iGetModel model = new Model(students);
-        iGetView view = new View();
+       FileModel fModel = new FileModel("StudentsDB.txt");
+       //fModel.saveAllStudentToFile(students);
 
-        Controller controller = new Controller(view, model);
-        controller.update();
+       iGetModel model = new Model(students);
+       iGetModel newFModel = fModel;
+       iGetView view = new View();
+
+       Controller controller = new Controller(view, newFModel);
+       //controller.update();
+       controller.run();
     }
 }
