@@ -1,5 +1,12 @@
 package StudentDomen;
 
+/**
+ * Класс для создания препадователя, принимает на вход:
+ * @param firstName - Имя
+ * @param secondName - Фамилия
+ * @param age - Возраст
+ * @param count - Номер / id
+ */
 public class Teacher extends Person{
     private String acadDegree;
     private int count;
@@ -7,6 +14,33 @@ public class Teacher extends Person{
         super(firstName, secondName, age);
         this.count = count;
     }
+
+    /**
+     * @return acadDegree
+     */
+    public String getAcadDegree() {
+        return acadDegree;
+    }
+
+    public void setAcadDegree(String acadDegree) {
+        this.acadDegree = acadDegree;
+    }
+
+    /**
+     * 
+     * @return count
+     */
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    /**
+     * метод toString()
+     */
     @Override
     public String toString() {
         return "Teacher{" +
@@ -15,17 +49,5 @@ public class Teacher extends Person{
                 ", age=" + super.getAge() +
                 ", id=" + count +
                 '}';
-    }
-    public String getAcadDegree() {
-        return acadDegree;
-    }
-    public void setAcadDegree(String acadDegree) {
-        this.acadDegree = acadDegree;
-    }
-    public int getCount() {
-        return count;
-    }
-    public void setCount(int count) {
-        this.count = count;
     }
 }
