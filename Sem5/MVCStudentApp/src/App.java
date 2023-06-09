@@ -8,6 +8,7 @@ import Model.FileModel;
 import Model.Model;
 import Model.Student;
 import View.View;
+import View.ViewEng;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -32,9 +33,9 @@ public class App {
 
        iGetModel model = new Model(students);
        iGetModel newFModel = fModel;
-       iGetView view = new View();
+    //    iGetView view = new ViewEng();
 
-       Controller controller = new Controller(view, model);
+       Controller controller = new Controller(model);
        //controller.update();
        controller.startProgramm();
     }

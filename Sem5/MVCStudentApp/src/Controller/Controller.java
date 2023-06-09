@@ -6,6 +6,7 @@ import java.util.List;
 import Model.Model;
 import Model.Student;
 import View.View;
+import View.ViewEng;
 
 public class Controller {
     private iGetView view;
@@ -13,8 +14,9 @@ public class Controller {
     private iGetModel model;
     private List<Student> students;
 
-    public Controller(iGetView view, iGetModel model) {
-        this.view = view;
+    // public Controller(iGetView view, iGetModel model) {
+    public Controller(iGetModel model) {
+        // this.view = view;
         this.model = model;
         this.students = new ArrayList<Student>();
     }
@@ -47,7 +49,8 @@ public class Controller {
     /**
      * Русский язык
      */
-    public void run() {
+    private void run() {
+        View view = new View();
         Commands com = Commands.NONE;
         boolean getNewIteration = true;
         while (getNewIteration) {
@@ -69,7 +72,8 @@ public class Controller {
     /**
      * English language
      */
-    public void runEng() {
+    private void runEng() {
+        ViewEng view = new ViewEng();
         Commands com = Commands.NONE;
         boolean getNewIteration = true;
         while (getNewIteration) {
@@ -97,6 +101,7 @@ public class Controller {
      */
     public void startProgramm() {
         LangProgramm lang = LangProgramm.NONE;
+        View view = new View();
         String command = view.prompt("Введите язык (RUS или ENG) / Input language (RUS or ENG): ");
         lang = LangProgramm.valueOf(command.toUpperCase());
         switch (lang) {
