@@ -6,4 +6,5 @@ import Model.Student;
 
 public interface iGetModel {
     List<Student> getAllStudents();
+    void removeStudent(Long id);
 }

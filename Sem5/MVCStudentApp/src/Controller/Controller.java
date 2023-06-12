@@ -65,10 +65,19 @@ public class Controller {
                     getAllStudents();
                     view.printAllStudents(students);
                     break;
+                case DELETE:
+                    String idDel = view.prompt("Введите номер студента, которого хотите удалить: ");
+                    Long removeID = Long.parseLong(idDel);
+                    removeStudent(removeID);
+                    break;
+                    
             }
         }
     }
     
+    private void removeStudent(Long removeID) {
+    }
+
     /**
      * English language
      */
@@ -87,6 +96,11 @@ public class Controller {
                 case LIST:
                     getAllStudents();
                     view.printAllStudents(students);
+                    break;
+                case DELETE:
+                    String idDel = view.prompt("Enter the number of the student you wish to delete: ");
+                    Long removeID = Long.parseLong(idDel);
+                    removeStudent(removeID);
                     break;
             }
         }

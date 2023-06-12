@@ -15,6 +15,11 @@ public class Model implements iGetModel{
         return students;
     }
 
-    public 
+    @Override
+    public void removeStudent(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeStudent'");
+    }
+ 
     
 }

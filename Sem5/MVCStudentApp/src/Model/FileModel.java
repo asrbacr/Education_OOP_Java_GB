@@ -63,5 +63,11 @@ public class FileModel implements iGetModel {
             System.out.println(e.getMessage());
         }
     }
+
+    @Override
+    public void removeStudent(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeStudent'");
+    }
     
 }
