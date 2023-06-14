@@ -1,0 +1,2 @@
+Задание: Переписать код SpeedCalculation в соответствии с Open-Closed Principle
+
