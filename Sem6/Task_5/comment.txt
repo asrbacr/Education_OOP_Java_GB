@@ -1,0 +1,2 @@
+Задание: Переписать код в соответствии с Dependency Inversion Principle
+
