@@ -1,2 +1,5 @@
 Задание: Переписать код SpeedCalculation в соответствии с Open-Closed Principle
 
+Vehicle написал интерфейс
+Car и Bus имплементируют Vehicle, переназначают методы.
+Переписал SpeedCalculation.

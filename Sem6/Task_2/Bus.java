@@ -11,4 +11,15 @@ public class Bus implements Vehicle{
     public double getType() {
         return 0.6;
     }
+    
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    @Override
+    public String getNameString() {
+        return "Bus";
+    }
+
 }

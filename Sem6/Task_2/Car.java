@@ -12,4 +12,19 @@ public class Car implements Vehicle {
         return 0.8;
     }
     
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+    
+    @Override
+    public String getNameString() {
+        return "Car";
+    }
+
+
+    // public void setMaxSpeed(int maxSpeed) {
+    //     this.maxSpeed = maxSpeed;
+    // }
+    
 }
