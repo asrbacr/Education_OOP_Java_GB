@@ -1,0 +1,3 @@
+Задание: Переписать код в соответствии с Liskov Substitution Principle
+
+1) 
