@@ -1,2 +1,4 @@
 Задание: Переписать код в соответствии с Dependency Inversion Principle
 
+1) Сделал интерфейс Engine. PetrolEngine имплементирует Engine
+2) В Car переписал строку на     private Engine engine;
