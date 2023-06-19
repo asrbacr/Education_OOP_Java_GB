@@ -7,8 +7,11 @@ public class Main {
         // iCalculable calculator = new CalcDecorator(new Calculator(0),new Logger());
         // ViewCalculator view = new ViewCalculator(calculator);
         // view.run();
-        ComplexNumber namb = new ComplexNumber(1, 2);
-        ComplexNumber numb = new ComplexNumber(3, -4);
-        namb.sum(numb).print();
+        // ComplexNumber namb = new ComplexNumber(1, 2);
+        // ComplexNumber numb = new ComplexNumber(3, -4);
+        // namb.sum(numb).print();
+        
+        ViewCalculatorComplexNumber view = new ViewCalculatorComplexNumber();
+        view.run();
     }
 }

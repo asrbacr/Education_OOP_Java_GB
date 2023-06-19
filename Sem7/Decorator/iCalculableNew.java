@@ -5,7 +5,7 @@ public interface iCalculableNew {
     int getReal();
     int getImaginary();
     // iCalculableNew multi(int arg);
-    iCalculableNew sum(int arg);
+    iCalculableNew sum(iCalculableNew arg);
     // iCalculableNew division(int arg, int arg2);
     
 

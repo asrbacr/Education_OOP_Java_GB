@@ -2,39 +2,51 @@ package OOP_GB_4335.Sem7.Decorator;
 
 import java.util.Scanner;
 
-public class ViewCalculator {
+import javax.xml.transform.Result;
 
-    private iCalculable calculator;
+public class ViewCalculatorComplexNumber {
 
-    public ViewCalculator(iCalculable calculator) {
-        this.calculator = calculator;
-    }
+    private int real;
+    private int imaginary;
+    private ComplexNumber calculator = new ComplexNumber(real, imaginary);
+
+    // public ViewCalculatorComplexNumber(ComplexNumber calculator) {
+    //     this.calculator = calculator;
+    // }
 
     public void run() {
         while (true) {
-            int primaryArg = promptInt("Введите первый аргумент: ");
-            calculator.sum(primaryArg);
+            int real = promptInt("Введите первое действительно число: ");
+            int imaginary = promptInt("Введите первое вещественное число: ");
+            // calculator.sum(calculator);
+            
             // iCalculable calculator = calculableFactory.create(primaryArg);
+            
             while (true) {
                 String cmd = prompt("Введите команду (*, +, =) : ");
-                if (cmd.equals("*")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.multi(arg);
-                    continue;
-                }
+                // if (cmd.equals("*")) {
+                //     int arg = promptInt("Введите второй аргумент: ");
+                //     calculator.multi(arg);
+                //     continue;
+                // }
                 if (cmd.equals("+")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.sum(arg);
+                    int real2 = promptInt("Введите второе действительное число: ");
+                    int imaginary2 = promptInt("Введите второе вещественное число: ");
+                    ComplexNumber number = new ComplexNumber(real2, imaginary2);
+                    calculator.sum(number);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int result = calculator.getResult();
-                    System.out.printf("Результат %d\n", result);
+                    ComplexNumber result = calculator;
+                    // System.out.printf("Результат %d\n", result);
+                    System.out.printf("Результат ");
+                    result.print();
                     break;
                 }
             }
+
             String cmd = prompt("Еще посчитать (Y/N)?");
-            if (cmd.equals("Y")) {
+            if (cmd.equalsIgnoreCase("Y")) {
                 continue;
             }
             break;

@@ -1,10 +1,10 @@
 package OOP_GB_4335.Sem7.Decorator;
 
-public class ComplexNumber{
+public class ComplexNumber {
     int real;
     int imaginary;
     
-    public ComplexNumber(int real, int imaginary) {
+    public  ComplexNumber(int real, int imaginary){
         this.real = real;
         this.imaginary = imaginary;
     }
@@ -53,11 +53,6 @@ public class ComplexNumber{
             System.out.println(real);
         }
     }
-
-
-
- 
-
 
 
 }
