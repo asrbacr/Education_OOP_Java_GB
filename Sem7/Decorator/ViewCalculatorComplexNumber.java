@@ -6,43 +6,48 @@ import javax.xml.transform.Result;
 
 public class ViewCalculatorComplexNumber {
 
-    private int real;
-    private int imaginary;
+    private double real;
+    private double imaginary;
     private ComplexNumber calculator = new ComplexNumber(real, imaginary);
-
-    // public ViewCalculatorComplexNumber(ComplexNumber calculator) {
-    //     this.calculator = calculator;
-    // }
 
     public void run() {
         while (true) {
-            int real = promptInt("Введите первое действительно число: ");
-            int imaginary = promptInt("Введите первое вещественное число: ");
-            // calculator.sum(calculator);
-            
-            // iCalculable calculator = calculableFactory.create(primaryArg);
+            double real = promptInt("Введите первое действительно число: ");
+            double imaginary = promptInt("Введите первое вещественное число: ");
+            ComplexNumber calculator = new ComplexNumber(real, imaginary);
             
             while (true) {
-                String cmd = prompt("Введите команду (*, +, =) : ");
-                // if (cmd.equals("*")) {
-                //     int arg = promptInt("Введите второй аргумент: ");
-                //     calculator.multi(arg);
-                //     continue;
-                // }
-                if (cmd.equals("+")) {
-                    int real2 = promptInt("Введите второе действительное число: ");
-                    int imaginary2 = promptInt("Введите второе вещественное число: ");
+                String cmd = prompt("Введите команду (*, +, /) : ");
+                if (cmd.equals("*")) {
+                    double real2 = promptInt("Введите второе действительное число: ");
+                    double imaginary2 = promptInt("Введите второе вещественное число: ");
                     ComplexNumber number = new ComplexNumber(real2, imaginary2);
-                    calculator.sum(number);
-                    continue;
-                }
-                if (cmd.equals("=")) {
-                    ComplexNumber result = calculator;
-                    // System.out.printf("Результат %d\n", result);
-                    System.out.printf("Результат ");
-                    result.print();
+                    System.out.print("=\nРезультат ");
+                    calculator.multi(number).print();
                     break;
                 }
+                if (cmd.equals("+")) {
+                    double real2 = promptInt("Введите второе действительное число: ");
+                    double imaginary2 = promptInt("Введите второе вещественное число: ");
+                    ComplexNumber number = new ComplexNumber(real2, imaginary2);
+                    System.out.print("=\nРезультат ");
+                    calculator.sum(number).print();
+                    break;
+                }
+                if (cmd.equals("/")) {
+                    double real2 = promptInt("Введите второе действительное число: ");
+                    double imaginary2 = promptInt("Введите второе вещественное число: ");
+                    ComplexNumber number = new ComplexNumber(real2, imaginary2);
+                    System.out.print("=\nРезультат ");
+                    calculator.division(number).print();
+                    break;
+                }
+                // if (cmd.equals("=")) {
+                //     ComplexNumber result = calculator;
+                //     // System.out.printf("Результат %d\n", result);
+                //     result.print();
+                //     break;
+                // }
             }
 
             String cmd = prompt("Еще посчитать (Y/N)?");
